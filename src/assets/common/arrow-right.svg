@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="288" height="509" viewBox="0 0 288 509">
+  <defs>
+    <clipPath id="clip-Prancheta_2">
+      <rect width="288" height="509"/>
+    </clipPath>
+  </defs>
+  <g id="Prancheta_2" data-name="Prancheta – 2" clip-path="url(#clip-Prancheta_2)">
+    <g id="arrow" transform="translate(382.663 493.175) rotate(180)">
+      <path id="Caminho_1" data-name="Caminho 1" d="M145.188,238.575l215.5-215.5a13.506,13.506,0,0,0-19.1-19.1l-225.1,225.1a13.46,13.46,0,0,0,0,19.1l225.1,225a13.588,13.588,0,0,0,9.5,4,13.173,13.173,0,0,0,9.5-4,13.46,13.46,0,0,0,0-19.1Z" fill="#9b9898"/>
+    </g>
+  </g>
+</svg>

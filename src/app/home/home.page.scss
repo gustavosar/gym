@@ -1,0 +1,101 @@
+.bg-gray {
+    background-color: #131313;
+}
+
+.bg-gradient {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 10%, rgba(16, 16, 16, 1) 100%);
+}
+
+.line1 {
+    --min-height: 70px;
+}
+
+.line2 {
+    --min-height: 120px;
+    & h1 {
+        color: #ffffff;
+        font-size: 1.2em;
+        margin: 0;
+        padding: 0;
+        text-transform: uppercase;
+        font-family: 'Poppins', sans-serif;
+        padding: 5px 0 8px 0;
+        letter-spacing: 0.02em;
+    }
+    & h2 {
+        color: #D0D0D0;
+        font-size: 0.9em;
+        margin: 0;
+        padding: 0;
+        font-weight: 300
+    }
+    & h3 {
+        color: #6F6F6F;
+        font-size: 0.65em;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.arrow-ico-left,
+.arrow-ico-right {
+    width: 3.5%;
+    z-index: 9;
+}
+
+.arrow-ico-left {
+    margin-left: 20px
+}
+
+.arrow-ico-right {
+    margin-right: 20px;
+}
+
+.contagem {
+    z-index: 9;
+    color: grey;
+    margin-left: 20px
+}
+
+.data {
+    z-index: 9;
+    color: grey;
+    margin-right: 20px
+}
+
+.dia-semana,
+.dia-mes {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.6em
+}
+
+.dia-semana {
+    color: #898989;
+}
+
+.dia-mes {
+    color: #B8B7B7;
+}
+
+.logo {
+    width: 22%;
+    margin-left: 6px
+}
+
+.counter {
+    color: #057905;
+}
+
+.btn-calendario,
+.btn-tarefas {
+    border: 1px solid grey;
+    --background: transparent;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    font-weight: 300;
+    font-size: 0.725em;
+    padding: 3px 8px
+}

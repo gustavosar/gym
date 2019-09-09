@@ -29,6 +29,7 @@
 
 .tittle {
     color: #D0D0D0;
+    flex-direction: column;
     & h1 {
         font-size: 3.7em;
         font-family: 'Raleway', sans-serif;
@@ -37,21 +38,15 @@
     }
 }
 
-.p-10 {
-    padding: 10%;
-}
-
-ion-footer {
-    --ion-background-color: #131313;
-}
-
-ion-content {
-    --ion-background-color: #131313;
-}
-
 small {
     color: #D0D0D0;
     font-family: 'Raleway', sans-serif;
 }
 
-;
+.logo {
+    margin-top: 15%;
+    & img {
+        width: 25%;
+        margin-top: 10%
+    }
+}

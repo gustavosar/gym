@@ -1,0 +1,31 @@
+<ion-header>
+
+    <ion-toolbar class="line1">
+        <div slot="start" class="contagem">
+            <span class="counter">0</span>
+            <img class="logo" src="../../assets/common/supino.svg">
+        </div>
+        <ion-title class="bg-gray">
+            <ion-button class="btn-calendario active" size="small">Calendário</ion-button>
+            <ion-button class="btn-tarefas" size="small">Tarefas</ion-button>
+        </ion-title>
+        <div slot="end" class="data">
+            <div class="dia-semana">{{today | date:'EEEE'}}</div>
+            <div class="dia-mes">{{today | date:'dd/MM/yyyy'}}</div>
+        </div>
+
+    </ion-toolbar>
+
+    <ion-toolbar class="line2">
+        <img slot="start" class="arrow-ico-left" src="../../assets/common/arrow-left.svg">
+        <ion-title class="bg-gradient">
+            <h2>Novembro</h2>
+            <h1>1° Semana</h1>
+            <h3>10/10/2019 - 17/10/2019</h3>
+        </ion-title>
+        <img slot="end" class="arrow-ico-right" src="../../assets/common/arrow-right.svg">
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content></ion-content>
