@@ -1,20 +1,22 @@
 .bg-gray {
     background-color: #131313;
+    --background: #131313;
 }
 
 .bg-gradient {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 10%, rgba(16, 16, 16, 1) 100%);
+    background: linear-gradient(180deg, rgba(19, 19, 19, 1) 10%, rgba(16, 16, 16, 1) 100%);
+    --background: linear-gradient(180deg, rgba(19, 19, 19, 1) 10%, rgba(16, 16, 16, 1) 100%);
 }
 
 .line1 {
-    --min-height: 70px;
+    --min-height: 65px;
 }
 
 .line2 {
-    --min-height: 120px;
+    --min-height: 100px;
     & h1 {
         color: #ffffff;
-        font-size: 1.2em;
+        font-size: 1em;
         margin: 0;
         padding: 0;
         text-transform: uppercase;
@@ -24,16 +26,19 @@
     }
     & h2 {
         color: #D0D0D0;
-        font-size: 0.9em;
+        font-size: 0.8em;
         margin: 0;
         padding: 0;
         font-weight: 300
     }
     & h3 {
         color: #6F6F6F;
-        font-size: 0.65em;
+        font-size: 0.6em;
         margin: 0;
         padding: 0;
+    }
+    & ion-tittle {
+        text-align: center
     }
 }
 
@@ -54,13 +59,15 @@
 .contagem {
     z-index: 9;
     color: grey;
-    margin-left: 20px
+    margin-left: 20px;
+    width: 20%;
 }
 
 .data {
     z-index: 9;
     color: grey;
-    margin-right: 20px
+    margin-right: 20px;
+    width: 20%
 }
 
 .dia-semana,
@@ -78,8 +85,9 @@
 }
 
 .logo {
-    width: 22%;
-    margin-left: 6px
+    width: 35%;
+    margin-left: 6px;
+    margin-bottom: -2px;
 }
 
 .counter {
@@ -90,12 +98,32 @@
 .btn-tarefas {
     border: 1px solid grey;
     --background: transparent;
-    border-radius: 6px;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    -ms-border-radius: 6px;
-    -o-border-radius: 6px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
     font-weight: 300;
-    font-size: 0.725em;
-    padding: 3px 8px
+    font-size: 0.7em !important;
+    padding: 3px 15px;
+    color: #fff;
+    width: 120px
+}
+
+.btn-tarefas {
+    margin-left: 10px
+}
+
+.active {
+    background: #ffffff !important;
+    color: #000 !important
+}
+
+.txt-c {
+    text-align: center
+}
+
+.btns-top {
+    text-align: center;
+    margin-top: -5px;
 }
