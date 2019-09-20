@@ -1,0 +1,11 @@
+.list {
+    padding: 7%;
+    margin: 0;
+    & ion-item {
+        border-bottom: 1px solid #1E1E1E
+    }
+    & ion-label {
+        color: #A9A8A8;
+        font-family: 'Poppins', sans-serif;
+    }
+}

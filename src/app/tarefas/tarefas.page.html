@@ -14,3 +14,36 @@
         </div>
     </ion-toolbar>
 </ion-header>
+
+<ion-content>
+
+    <ion-list class="list" ion-padding ion-margin>
+
+        <ion-item-sliding>
+            <ion-item>
+                <ion-label>Ombro</ion-label>
+            </ion-item>
+            <ion-item-options side="end">
+                <ion-item-option color="danger" (click)="unread(item)">Excluir</ion-item-option>
+            </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding>
+            <ion-item>
+                <ion-label>Costas</ion-label>
+            </ion-item>
+            <ion-item-options side="end">
+                <ion-item-option color="danger" (click)="unread(item)">Excluir</ion-item-option>
+            </ion-item-options>
+        </ion-item-sliding>
+
+
+    </ion-list>
+
+    <!-- BTN + -->
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button color="dark">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
+</ion-content>
