@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tarefas',
@@ -7,6 +8,20 @@ import { Component } from '@angular/core';
 })
 export class TarefasPage {
   public today = Date.now();
-  constructor() {}
+
+  constructor(public alertController: AlertController) {}
+  
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Adicionar',
+      message: '<input type="text">',
+      buttons: ['OK'],
+    });
+  
+    await alert.present();
+    let result = await alert.onDidDismiss();
+    console.log(result);
+  }
+
 
 }
