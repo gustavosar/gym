@@ -18,9 +18,9 @@
     <ion-toolbar class="line2 bg-gradient">
         <img slot="start" class="arrow-ico-left" src="../../assets/common/arrow-left.svg">
         <ion-title class="txt-c">
-            <h2>Novembro</h2>
-            <h1>1° Semana</h1>
-            <h3>10/10/2019 - 17/10/2019</h3>
+            <h2>{{today | date:'MMMM'}}</h2>
+            <h1>{{weekNumber}}° Semana</h1>
+            <h3>{{startWeek | date:'dd/MM/yy'}} - {{endWeek | date:'dd/MM/yy'}}</h3>
         </ion-title>
         <img slot="end" class="arrow-ico-right" src="../../assets/common/arrow-right.svg">
     </ion-toolbar>
@@ -32,7 +32,7 @@
     <ul class="week-days">
         <li>
             <div class="items-date">
-                <div class="date-list">10/10</div>
+                <div class="date-list">{{startWeek | date:'dd/MM'}}</div>
                 <div class="day-list">segunda</div>
             </div>
             <div class="items-divider"></div>
@@ -43,7 +43,7 @@
         </li>
         <li>
             <div class="items-date">
-                <div class="date-list">10/10</div>
+                <div class="date-list">{{startWeek.add('d', 1) | date:'dd/MM'}}</div>
                 <div class="day-list">terça</div>
             </div>
             <div class="items-divider"></div>
@@ -54,7 +54,7 @@
         </li>
         <li>
             <div class="items-date">
-                <div class="date-list">10/10</div>
+                <div class="date-list">{{startWeek.add('d', 1) | date:'dd/MM'}}</div>
                 <div class="day-list">quarta</div>
             </div>
             <div class="items-divider"></div>
@@ -65,7 +65,7 @@
         </li>
         <li>
             <div class="items-date">
-                <div class="date-list">10/10</div>
+                <div class="date-list">{{startWeek.add('d', 1) | date:'dd/MM'}}</div>
                 <div class="day-list">quinta</div>
             </div>
             <div class="items-divider"></div>
@@ -76,7 +76,7 @@
         </li>
         <li>
             <div class="items-date">
-                <div class="date-list">10/10</div>
+                <div class="date-list">{{startWeek.add('d', 1) | date:'dd/MM'}}</div>
                 <div class="day-list">sexta</div>
             </div>
             <div class="items-divider"></div>
@@ -87,7 +87,7 @@
         </li>
         <li>
             <div class="items-date">
-                <div class="date-list">10/10</div>
+                <div class="date-list">{{startWeek.add('d', 1) | date:'dd/MM'}}</div>
                 <div class="day-list">sábado</div>
             </div>
             <div class="items-divider"></div>
@@ -98,7 +98,7 @@
         </li>
         <li>
             <div class="items-date">
-                <div class="date-list">10/10</div>
+                <div class="date-list">{{endWeek | date:'dd/MM'}}</div>
                 <div class="day-list">domingo</div>
             </div>
             <div class="items-divider"></div>
