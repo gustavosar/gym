@@ -14,7 +14,7 @@ export class TarefasPage {
   async presentAlert() {
     const alert = await this.alertController.create({
       header: 'Adicionar',
-      message: '<input type="text">',
+      message: '<input class="tarefa-text" type="text">',
       buttons: ['OK'],
     });
   
