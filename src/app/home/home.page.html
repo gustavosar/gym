@@ -30,13 +30,13 @@
 <ion-content>
 
     <ul class="week-days">
-        <li>
+        <li routerLink="/day">
             <div class="items-date">
                 <div class="date-list">{{startWeek | date:'dd/MM'}}</div>
                 <div class="day-list">segunda</div>
             </div>
             <div class="items-divider"></div>
-            <div class="items-list">
+            <div class="items-list" (click)="openPicker()">
                 <span>Ombro</span>
                 <span>Costas</span>
             </div>

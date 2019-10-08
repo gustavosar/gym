@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import * as moment from 'moment';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -19,24 +20,30 @@ export class HomePage {
   public endWeek;
   public weekNumber;
 
+  
 /*   public nextStartWeek;
   public nextEndWeek;
   public previousStartWeek;
   public previousEndWeek; */
 
+
+  
   constructor() {
 
     this.endWeek = this.m.endOf('isoWeek');
     this.startWeek = this.mm.startOf('isoWeek');
     this.weekNumber = this.mmm.weeks()-this.mmm.add(0, 'month').startOf('month').weeks() + 1;
 
-/*     this.nextStartWeek = this.moment.add(1, 'weeks').startOf('isoWeek');
+    /*  
+    this.nextStartWeek = this.moment.add(1, 'weeks').startOf('isoWeek');
     this.nextEndWeek = this.moment.add(1, 'weeks').endOf('isoWeek');
 
     this.previousStartWeek = this.moment.subtract(1, 'weeks').startOf('isoWeek');
-    this.previousEndWeek = this.moment.subtract(1, 'weeks').endOf('isoWeek') */
-
+    this.previousEndWeek = this.moment.subtract(1, 'weeks').endOf('isoWeek') 
+    */
 
   }
 
+
 }
+

@@ -1,0 +1,27 @@
+<ion-header>
+
+    <ion-toolbar class="line1 bg-gray">
+        <div slot="start" class="contagem" routerLink="/home">
+            <span class="back">
+                <ion-icon name="arrow-back"></ion-icon>
+                Voltar
+            </span>
+        </div>
+        <div slot="end" class="data">
+            <div class="dia"><span class="data-text">{{today | date:'EEEE'}}</span> - <span class="data-numbers">{{today | date:'dd/MM'}}</span></div>
+        </div>
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+
+    <!-- BTN + -->
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="openPicker()" color="dark">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
+</ion-content>

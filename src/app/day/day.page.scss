@@ -1,0 +1,24 @@
+.back {
+    color: #057905;
+    & ion-icon {
+        margin-bottom: -2px;
+    }
+}
+
+.dia {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    white-space: nowrap;
+}
+
+.data {
+    width: 50%;
+}
+
+.data-numbers {
+    color: #fff;
+}
+
+.data-text {
+    color: #C2C2C2;
+}
