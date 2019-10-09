@@ -19,10 +19,12 @@ export class DayPage implements OnInit {
   async openPicker() {
     const picker = await this.pickerCtrl.create({
       buttons: [{
-        text: 'Confirmar'
+        text: 'Confirmar',
+        handler: (value: any): void => { console.log(value, 'ok'); }
       },
       {
-        text: 'Cancelar'
+        text: 'Cancelar',
+        handler: (value: any): void => { console.log(value, 'cancel'); }
       }],
       columns: [
         {

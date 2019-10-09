@@ -181,3 +181,20 @@ ion-fab-buton {
 .alert-button {
     color: green !important
 }
+
+.picker-wrapper {
+    background: #000 !important;
+    color: rgb(75, 75, 75) !important
+}
+
+.picker-opt.picker-opt-selected {
+    color: green !important
+}
+
+.picker-toolbar.sc-ion-picker-md {
+    justify-content: space-between;
+}
+
+.picker-button.sc-ion-picker-md {
+    color: #bdbdbd !important;
+}
