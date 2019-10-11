@@ -50,9 +50,16 @@
 
     <!-- BTN + -->
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-        <ion-fab-button (click)="presentAlert()" color="dark">
+        <ion-fab-button (click)="ngxSmartModalService.getModal('popupOne').open()" color="dark">
             <ion-icon name="add"></ion-icon>
         </ion-fab-button>
     </ion-fab>
+
+    <ngx-smart-modal #popupOne [identifier]="'popupOne'" customClass="nsm-dialog-animation-ttb nsm-centered" [closable]="false">
+        <h1>Adicionar</h1>
+        <p><input class="tarefa-text" [(ngModel)]="todo.task" type="text"></p>
+        <hr class="line">
+        <button class="salvarTask" (click)="saveTodo()">OK</button>
+    </ngx-smart-modal>
 
 </ion-content>

@@ -6,8 +6,11 @@ import { RouterModule } from '@angular/router';
 
 import { TarefasPage } from './tarefas.page';
 
+import { NgxSmartModalModule, NgxSmartModalService } from 'ngx-smart-modal';
+
 @NgModule({
   imports: [
+    NgxSmartModalModule.forRoot(),
     CommonModule,
     FormsModule,
     IonicModule,
@@ -18,6 +21,7 @@ import { TarefasPage } from './tarefas.page';
       }
     ])
   ],
-  declarations: [TarefasPage]
+  declarations: [TarefasPage],
+  providers: [ NgxSmartModalService ]
 })
 export class TarefasPageModule {}

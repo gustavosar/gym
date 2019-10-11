@@ -198,3 +198,17 @@ ion-fab-buton {
 .picker-button.sc-ion-picker-md {
     color: #bdbdbd !important;
 }
+
+.nsm-content {
+    background: #000;
+    width: 65%;
+    text-align: center;
+    & h1 {
+        color: #bfbfbf;
+        margin-top: 10px;
+    }
+}
+
+.nsm-dialog.nsm-centered {
+    justify-content: center;
+}

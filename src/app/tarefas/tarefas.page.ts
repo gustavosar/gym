@@ -1,15 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { AlertController, LoadingController, NavController } from '@ionic/angular';
 import { TaskI } from '../models/task.interface';
 import { FirestoreService } from '../services/firestore.service';
 import { ActivatedRoute } from '@angular/router';
+
+import { NgxSmartModalService } from 'ngx-smart-modal';
 
 @Component({
   selector: 'app-tarefas',
   templateUrl: 'tarefas.page.html',
   styleUrls: ['tarefas.page.scss'],
 })
-export class TarefasPage {
+export class TarefasPage implements AfterViewInit {
   public today = Date.now();
   todos: TaskI[];
   todoId= null;
@@ -18,30 +20,15 @@ export class TarefasPage {
     task: ''
   };
 
+
   constructor(
     public alertController: AlertController, 
     private firestoreService: FirestoreService,
     private loadingController: LoadingController,
     private route: ActivatedRoute,
-    private nav: NavController
-    ) {}
-  
-  /* Alert */
-  async presentAlert() {
-    const alert = await this.alertController.create({
-      header: 'Adicionar',
-      message: '<input class="tarefa-text" [(ngModel)]="todo.task" type="text">',
-      buttons: [{
-        text: 'OK',
-        handler: () => { this.saveTodo() },
-
-      }],
-    });
-  
-    await alert.present();
-    let result = await alert.onDidDismiss();
-    console.log(result);
-  }
+    private nav: NavController,
+    public ngxSmartModalService: NgxSmartModalService
+    ) { }
 
   /* Serviço Firestore */
   ngOnInit(){
@@ -82,8 +69,10 @@ export class TarefasPage {
     } else {
       this.firestoreService.addTodo(this.todo).then(() => {
         loading.dismiss();
+        this.ngxSmartModalService.closeLatestModal();
       });
     }
+    
   }
 
 
@@ -92,4 +81,13 @@ export class TarefasPage {
     this.firestoreService.removeTodo(idTodo);
   }
 
+  ngAfterViewInit() {
+    const pen: Object = {
+      prop1: 'test',
+      prop2: true,
+      prop3: [{ a: 'a', b: 'b' }, { c: 'c', d: 'd' }],
+      prop4: 327652175423
+    };
+    this.ngxSmartModalService.setModalData(pen, 'popupOne');
+  }
 }
