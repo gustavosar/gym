@@ -60,27 +60,13 @@ export class TarefasPage implements AfterViewInit {
     const loading = await this.loadingController.create({
       message: 'Salvando ...'
     });
-    await loading.present();
- 
-    if (this.todoId) {
-      this.firestoreService.updateTodo(this.todo, this.todoId).then(() => {
-        loading.dismiss();
-      });
-    } else {
-      this.firestoreService.addTodo(this.todo).then(() => {
-        loading.dismiss();
-        this.ngxSmartModalService.closeLatestModal();
-      });
-    }
-    
+
+    this.firestoreService.addTodo(this.todo).then(() => {
+      this.ngxSmartModalService.closeLatestModal();
+    });
   }
-
-
-  /* Deletando */
-  async onRemoveTodo(idTodo:string) {
-    this.firestoreService.removeTodo(idTodo);
-  }
-
+  
+  /* MODAL */
   ngAfterViewInit() {
     const pen: Object = {
       prop1: 'test',
@@ -89,5 +75,11 @@ export class TarefasPage implements AfterViewInit {
       prop4: 327652175423
     };
     this.ngxSmartModalService.setModalData(pen, 'popupOne');
+  }
+
+
+  /* Deletando */
+  async onRemoveTodo(idTodo:string) {
+    this.firestoreService.removeTodo(idTodo);
   }
 }

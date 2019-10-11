@@ -32,14 +32,14 @@
         <!-- FOR DA LISTA TAREFAS FIREBASE -->
         <ion-item-sliding *ngFor="let todo of todos">
 
-            <ion-item lines="inset" button [routerLink]="['/details', todo.id]">
+            <ion-item lines="inset" *ngIf="todo">
                 <ion-label>
                     {{ todo.task }}
                 </ion-label>
             </ion-item>
 
             <ion-item-options side="end">
-                <ion-item-option color="danger" (click)="remove(item)">
+                <ion-item-option color="danger " (click)="onRemoveTodo(todoId)">
                     Excluir
                 </ion-item-option>
             </ion-item-options>
@@ -50,16 +50,17 @@
 
     <!-- BTN + -->
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-        <ion-fab-button (click)="ngxSmartModalService.getModal('popupOne').open()" color="dark">
+        <ion-fab-button (click)="ngxSmartModalService.getModal( 'popupOne').open()" color="dark">
             <ion-icon name="add"></ion-icon>
         </ion-fab-button>
     </ion-fab>
 
-    <ngx-smart-modal #popupOne [identifier]="'popupOne'" customClass="nsm-dialog-animation-ttb nsm-centered" [closable]="false">
+    <!-- MODAL -->
+    <ngx-smart-modal #popupOne [identifier]=" 'popupOne' " customClass="nsm-dialog-animation-ttb nsm-centered " [closable]="false ">
         <h1>Adicionar</h1>
-        <p><input class="tarefa-text" [(ngModel)]="todo.task" type="text"></p>
-        <hr class="line">
-        <button class="salvarTask" (click)="saveTodo()">OK</button>
+        <p><input class="tarefa-text " [(ngModel)]="todo.task " type="text "></p>
+        <hr class="line ">
+        <button class="salvarTask " (click)="saveTodo() ">OK</button>
     </ngx-smart-modal>
 
 </ion-content>
