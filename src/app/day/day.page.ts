@@ -12,8 +12,7 @@ export class DayPage implements OnInit {
 
   constructor(private pickerCtrl: PickerController) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 
   async openPicker() {
@@ -32,15 +31,6 @@ export class DayPage implements OnInit {
           options: [
             {
               text: 'Ombro',
-              value: 1
-            },
-            {
-              text: 'Peito',
-              value: 2
-            },
-            {
-              text: 'Costas',
-              value: 3
             },
           ]
         }

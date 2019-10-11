@@ -19,29 +19,15 @@
 
     <ion-list class="list" ion-padding ion-margin>
 
-        <!-- SKELETON -->
-        <ng-container *ngIf="!todos || todos.length == 0">
-            <div *ngFor="let n of [0,1,2]" padding>
-                <ion-skeleton-text></ion-skeleton-text>
-                <p>
-                    <ion-skeleton-text class="text-skeleton"></ion-skeleton-text>
-                </p>
-            </div>
-        </ng-container>
-
         <!-- FOR DA LISTA TAREFAS FIREBASE -->
         <ion-item-sliding *ngFor="let todo of todos">
 
-            <ion-item lines="inset" *ngIf="todo">
-                <ion-label>
-                    {{ todo.task }}
-                </ion-label>
+            <ion-item>
+                <ion-label>{{ todo.task }}</ion-label>
             </ion-item>
 
             <ion-item-options side="end">
-                <ion-item-option color="danger " (click)="onRemoveTodo(todoId)">
-                    Excluir
-                </ion-item-option>
+                <ion-item-option color="danger" (click)="onRemoveTodo(todo.id)">Excluir</ion-item-option>
             </ion-item-options>
 
         </ion-item-sliding>
@@ -56,11 +42,13 @@
     </ion-fab>
 
     <!-- MODAL -->
-    <ngx-smart-modal #popupOne [identifier]=" 'popupOne' " customClass="nsm-dialog-animation-ttb nsm-centered " [closable]="false ">
+    <ngx-smart-modal #popupOne [identifier]="'popupOne'" customClass="nsm-dialog-animation-ttb nsm-centered" [closable]="false">
         <h1>Adicionar</h1>
-        <p><input class="tarefa-text " [(ngModel)]="todo.task " type="text "></p>
+        <p>
+            <ion-searchbar showCancelButton="always" animated [(ngModel)]="todo.task" placeholder="Escreva aqui ..."></ion-searchbar>
+        </p>
         <hr class="line ">
-        <button class="salvarTask " (click)="saveTodo() ">OK</button>
+        <button class="salvarTask" (click)="saveTodo()">OK</button>
     </ngx-smart-modal>
 
 </ion-content>
