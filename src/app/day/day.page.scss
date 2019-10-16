@@ -34,3 +34,49 @@
         font-family: 'Poppins', sans-serif;
     }
 }
+
+.list {
+    padding: 7%;
+    margin: 0;
+    & ion-item {
+        border-bottom: 1px solid #1E1E1E
+    }
+    & ion-label {
+        color: #A9A8A8;
+        font-family: 'Poppins', sans-serif;
+    }
+}
+
+.nsm-dialog-btn-close {
+    display: none;
+}
+
+.salvarTask {
+    background: none;
+    color: green;
+    border: none;
+    font-size: 1em;
+    margin: 0 15px
+}
+
+.bg-none {
+    background: none;
+    & ion-item {
+        color: #cacaca;
+        background: #000
+    }
+}
+
+.alert-checkbox-label {
+    color: grey
+}
+
+.opcoes {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    bottom: 0;
+    right: 0;
+    margin: 8px;
+    z-index: 99999;
+}

@@ -221,3 +221,11 @@ ion-fab-buton {
 .searchbar-should-show-cancel.sc-ion-searchbar-md-h .searchbar-cancel-button.sc-ion-searchbar-md {
     display: none;
 }
+
+ion-item {
+    --border-color: #1E1E1E;
+}
+
+.alert-checkbox-label.sc-ion-alert-ios {
+    color: grey;
+}

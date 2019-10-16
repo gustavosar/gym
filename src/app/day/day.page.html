@@ -16,7 +16,6 @@
 
 <ion-content>
 
-
     <ion-list class="list" ion-padding ion-margin>
 
         <ion-item-sliding>
@@ -28,22 +27,20 @@
             </ion-item-options>
         </ion-item-sliding>
 
-        <ion-item-sliding>
-            <ion-item>
-                <ion-label>Costas</ion-label>
-            </ion-item>
-            <ion-item-options side="end">
-                <ion-item-option color="danger" (click)="unread(item)">Excluir</ion-item-option>
-            </ion-item-options>
-        </ion-item-sliding>
 
     </ion-list>
 
-    <!-- BTN + -->
+
+    <ion-select [interfaceOptions]="customAlertOptions" class="opcoes" interface="alert" multiple="true" mode="ios" cancelText="Esquece" okText="Adicionar">
+        <ion-select-option *ngFor="let todo of todos" class="abcde">{{ todo.task }}</ion-select-option>
+    </ion-select>
+
+    <!-- BTN +-->
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-        <ion-fab-button (click)="openPicker()" color="dark">
+        <ion-fab-button color="dark">
             <ion-icon name="add"></ion-icon>
         </ion-fab-button>
     </ion-fab>
+
 
 </ion-content>
