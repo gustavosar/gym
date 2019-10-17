@@ -229,3 +229,8 @@ ion-item {
 .alert-checkbox-label.sc-ion-alert-ios {
     color: grey;
 }
+
+.opcoes .select-text,
+.opcoes .select-icon {
+    display: transparent !important
+}

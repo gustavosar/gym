@@ -5,7 +5,7 @@
             <img class="logo-top" src="../../assets/common/supino.svg">
         </div>
         <div class="btns-top">
-            <a href="./home" class="btn-calendario " size="small">Calendário</a>
+            <a href="./home" class="btn-calendario" size="small">Calendário</a>
             <a class="btn-tarefas active" size="small">Tarefas</a>
         </div>
         <div slot="end" class="data">
@@ -21,17 +21,12 @@
 
         <!-- FOR DA LISTA TAREFAS FIREBASE -->
         <ion-item-sliding *ngFor="let todo of todos">
-
             <ion-item>
                 <ion-label>{{ todo.task }}</ion-label>
             </ion-item>
-
             <ion-item-options side="end">
-                <ion-item-option color="danger" (click)="onRemoveTodo(todo.id)">
-                    Excluir
-                </ion-item-option>
+                <ion-item-option color="danger" (click)="onRemoveTodo(todo.id)">Excluir</ion-item-option>
             </ion-item-options>
-
         </ion-item-sliding>
 
     </ion-list>
@@ -49,7 +44,7 @@
         <p>
             <ion-searchbar showCancelButton="always" animated [(ngModel)]="todo.task" placeholder="Escreva aqui ..."></ion-searchbar>
         </p>
-        <hr class="line ">
+        <hr class="line">
         <button class="salvarTask" (click)="saveTodo()">OK</button>
     </ngx-smart-modal>
 

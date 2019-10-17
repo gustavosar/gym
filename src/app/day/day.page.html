@@ -27,12 +27,14 @@
             </ion-item-options>
         </ion-item-sliding>
 
+        <input [(ngModel)]="day.task">
+        <ion-button click="saveDay()">aaaa</ion-button>
 
     </ion-list>
 
 
-    <ion-select [interfaceOptions]="customAlertOptions" class="opcoes" interface="alert" multiple="true" mode="ios" cancelText="Esquece" okText="Adicionar">
-        <ion-select-option *ngFor="let todo of todos" class="abcde">{{ todo.task }}</ion-select-option>
+    <ion-select [interfaceOptions]="customAlertOptions" class="opcoes" interface="alert" multiple="true" mode="ios" cancelText="Esquece" okText="Adicionar" ionChange="">
+        <ion-select-option *ngFor="let todo of todos">{{ todo.task }}</ion-select-option>
     </ion-select>
 
     <!-- BTN +-->
