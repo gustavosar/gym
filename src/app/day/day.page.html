@@ -30,13 +30,10 @@
 
     </ion-list>
 
-    <ion-searchbar showCancelButton="always" animated [(ngModel)]="day.task" placeholder="Escreva aqui ..."></ion-searchbar>
-    <ion-searchbar showCancelButton="always" animated [(ngModel)]="day.day" placeholder="Escreva aqui ..."></ion-searchbar>
-    <ion-button click="saveDay()">aaaa</ion-button>
 
+    <ion-searchbar [(ngModel)]="day.day" style="display:none">11111</ion-searchbar>
 
-
-    <ion-select [interfaceOptions]="customAlertOptions" class="opcoes" interface="alert" multiple="true" mode="ios" cancelText="Esquece" okText="Adicionar" ionChange="">
+    <ion-select class="opcoes" interface="alert" multiple="true" mode="ios" cancelText="Esquece" okText="Adicionar" ionChange="saveDay()">
         <ion-select-option *ngFor="let todo of todos">{{ todo.task }}</ion-select-option>
     </ion-select>
 
