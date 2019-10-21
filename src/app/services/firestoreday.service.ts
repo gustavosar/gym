@@ -26,7 +26,7 @@ export class FirestoredayService {
       );
     }
   
-    getdays(){
+    getDays(){
       return this.days;
     }
   

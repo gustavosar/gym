@@ -37,24 +37,43 @@ export class DayPage implements OnInit{
     this.firestoreService.getTodos().subscribe((todos) =>{
       this.todos = todos;
     });
-
+    
     /* SERVICO DAY */
-    this.firestoredayService.getdays().subscribe((days) =>{
+    this.firestoredayService.getDays().subscribe((days) =>{
       this.days = days;
     });
 
+    this.dayId = this.route.snapshot.params['id'];
+    if (this.dayId){
+      this.loadDay();
+    }
+
   }
 
+
+  /* Loading */
   async loadDay(){
-    this.firestoreService.getTodo(this.dayId).subscribe(todo => {
-      this.day = this.day;
+    const loading = await this.loadingController.create({
+      message: 'Loading....'
+    });
+    await loading.present();
+
+    this.firestoredayService.getDay(this.dayId).subscribe(day => {
+      loading.dismiss();;
+      this.day = day;
     });
   }
 
-    /* Salvando Tarefa */
-    async saveDay() { 
-      this.firestoredayService.addDay(this.day).then(() => {
-      });
-    }
+  /* Salvando Tarefa */
+  async saveDay() {
+    const loading = await this.loadingController.create({
+      message: 'Salvando ...'
+    });
+
+    this.firestoredayService.addDay(this.day).then(() => {
+      loading.dismiss();
+    });
+  }
+
 
 }
