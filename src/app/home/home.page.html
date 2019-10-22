@@ -30,7 +30,7 @@
 <ion-content>
 
     <ul class="week-days">
-        <li routerLink="/day">
+        <li (click)="navDay()">
             <div class="items-date">
                 <div class="date-list">{{startWeek | date:'dd/MM'}}</div>
                 <div class="day-list">segunda</div>
@@ -41,7 +41,7 @@
                 <span>Costas</span>
             </div>
         </li>
-        <li>
+        <li routerLink="/day">
             <div class="items-date">
                 <div class="date-list">{{startWeek.add('d', 1) | date:'dd/MM'}}</div>
                 <div class="day-list">terça</div>
@@ -52,7 +52,7 @@
                 <span>Costas</span>
             </div>
         </li>
-        <li>
+        <li routerLink="/day">
             <div class="items-date">
                 <div class="date-list">{{startWeek.add('d', 1) | date:'dd/MM'}}</div>
                 <div class="day-list">quarta</div>
@@ -63,7 +63,7 @@
                 <span>Costas</span>
             </div>
         </li>
-        <li>
+        <li routerLink="/day">
             <div class="items-date">
                 <div class="date-list">{{startWeek.add('d', 1) | date:'dd/MM'}}</div>
                 <div class="day-list">quinta</div>
@@ -74,7 +74,7 @@
                 <span>Costas</span>
             </div>
         </li>
-        <li>
+        <li routerLink="/day">
             <div class="items-date">
                 <div class="date-list">{{startWeek.add('d', 1) | date:'dd/MM'}}</div>
                 <div class="day-list">sexta</div>
@@ -85,7 +85,7 @@
                 <span>Costas</span>
             </div>
         </li>
-        <li>
+        <li routerLink="/day">
             <div class="items-date">
                 <div class="date-list">{{startWeek.add('d', 1) | date:'dd/MM'}}</div>
                 <div class="day-list">sábado</div>
@@ -96,7 +96,7 @@
                 <span>Costas</span>
             </div>
         </li>
-        <li>
+        <li routerLink="/day">
             <div class="items-date">
                 <div class="date-list">{{endWeek | date:'dd/MM'}}</div>
                 <div class="day-list">domingo</div>

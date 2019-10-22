@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import * as moment from 'moment';
-
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
+
 export class HomePage {
 
   public today = Date.now();
@@ -28,7 +29,10 @@ export class HomePage {
 
 
   
-  constructor() {
+  constructor(
+    private activeRoute: ActivatedRoute,
+		private routes: Router,
+  ) {
 
     this.endWeek = this.m.endOf('isoWeek');
     this.startWeek = this.mm.startOf('isoWeek');
@@ -44,6 +48,10 @@ export class HomePage {
 
   }
 
+  navDay() {
+    const startWeek = JSON.stringify(this.startWeek);
+    this.routes.navigate(['/day'], { queryParams:  { startWeek } });
+  }
 
 }
 
