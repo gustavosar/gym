@@ -1,7 +1,7 @@
 <ion-header>
     <ion-toolbar class="line1 bg-gray">
         <div slot="start" class="contagem">
-            <span class="counter">0</span>
+            <span class="counter">{{todos ? todos.length : ''}}</span>
             <img class="logo-top" src="../../assets/common/supino.svg">
         </div>
         <div class="btns-top">
@@ -20,7 +20,7 @@
     <ion-list class="list" ion-padding ion-margin>
 
         <!-- FOR DA LISTA TAREFAS FIREBASE -->
-        <ion-item-sliding *ngFor="let todo of todos">
+        <ion-item-sliding *ngFor="let todo of todos; let c = count;">
             <ion-item>
                 <ion-label>{{todo.task}}</ion-label>
             </ion-item>
@@ -28,7 +28,6 @@
                 <ion-item-option color="danger" (click)="onRemoveTodo(todo.id)">Excluir</ion-item-option>
             </ion-item-options>
         </ion-item-sliding>
-
 
         <!-- SKELETON DA Lista -->
         <ion-item-sliding *ngIf="!todos">
