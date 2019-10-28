@@ -3,7 +3,6 @@ import { AlertController, LoadingController, NavController } from '@ionic/angula
 import { TaskI } from '../models/task.interface';
 import { FirestoreService } from '../services/firestore.service';
 import { ActivatedRoute } from '@angular/router';
-
 import { NgxSmartModalService } from 'ngx-smart-modal';
 
 @Component({
@@ -17,9 +16,9 @@ export class TarefasPage implements AfterViewInit {
   todoId= null;
 
   todo: TaskI = {
-    task: ''
-  };
-
+    task: '',
+    user: ''
+    };
 
   constructor(
     public alertController: AlertController, 
