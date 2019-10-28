@@ -57,10 +57,13 @@ export class TarefasPage implements AfterViewInit {
   /* Salvando Tarefa */
   async saveTodo() {
     const loading = await this.loadingController.create({
-      message: 'Salvando ...'
+      message: 'Loading  ...'
     });
+    await loading.present();
+   
 
     this.firestoreService.addTodo(this.todo).then(() => {
+      loading.dismiss();
       this.ngxSmartModalService.closeLatestModal();
     });
   }
