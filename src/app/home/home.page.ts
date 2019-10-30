@@ -22,13 +22,14 @@ export class HomePage {
   public weekNumber;
 
   
-/*   public nextStartWeek;
+  /*
+  public nextStartWeek;
   public nextEndWeek;
   public previousStartWeek;
-  public previousEndWeek; */
+  public previousEndWeek;
+  */
 
 
-  
   constructor(
     private activeRoute: ActivatedRoute,
 		private routes: Router,

@@ -41,18 +41,8 @@
                 <span>Costas</span>
             </div>
         </li>
-        <li routerLink="/day">
-            <div class="items-date">
-                <div class="date-list">{{startWeek.add('d', 1) | date:'dd/MM'}}</div>
-                <div class="day-list">terça</div>
-            </div>
-            <div class="items-divider"></div>
-            <div class="items-list">
-                <span>Ombro</span>
-                <span>Costas</span>
-            </div>
-        </li>
-        <li routerLink="/day">
+
+        <li (click)="navDay()">
             <div class="items-date">
                 <div class="date-list">{{startWeek.add('d', 1) | date:'dd/MM'}}</div>
                 <div class="day-list">quarta</div>
@@ -63,50 +53,7 @@
                 <span>Costas</span>
             </div>
         </li>
-        <li routerLink="/day">
-            <div class="items-date">
-                <div class="date-list">{{startWeek.add('d', 1) | date:'dd/MM'}}</div>
-                <div class="day-list">quinta</div>
-            </div>
-            <div class="items-divider"></div>
-            <div class="items-list">
-                <span>Ombro</span>
-                <span>Costas</span>
-            </div>
-        </li>
-        <li routerLink="/day">
-            <div class="items-date">
-                <div class="date-list">{{startWeek.add('d', 1) | date:'dd/MM'}}</div>
-                <div class="day-list">sexta</div>
-            </div>
-            <div class="items-divider"></div>
-            <div class="items-list">
-                <span>Ombro</span>
-                <span>Costas</span>
-            </div>
-        </li>
-        <li routerLink="/day">
-            <div class="items-date">
-                <div class="date-list">{{startWeek.add('d', 1) | date:'dd/MM'}}</div>
-                <div class="day-list">sábado</div>
-            </div>
-            <div class="items-divider"></div>
-            <div class="items-list">
-                <span>Ombro</span>
-                <span>Costas</span>
-            </div>
-        </li>
-        <li routerLink="/day">
-            <div class="items-date">
-                <div class="date-list">{{endWeek | date:'dd/MM'}}</div>
-                <div class="day-list">domingo</div>
-            </div>
-            <div class="items-divider"></div>
-            <div class="items-list">
-                <span>Ombro</span>
-                <span>Costas</span>
-            </div>
-        </li>
+
     </ul>
 
 </ion-content>

@@ -29,7 +29,7 @@
 
     </ion-list>
 
-    <input [(ngModel)]="day.day" hidden="true" value="10/10/10">
+    <input [(ngModel)]="day.day" name="10/10/10" [ngModelOptions]="{updateOn: change}" value="123">
 
     <ion-select class="opcoes" interface="alert" multiple="true" mode="ios" cancelText="Esquece" okText="Adicionar" [(ngModel)]="day.task" (ionChange)="saveDay()">
         <ion-select-option *ngFor="let todo of todos">{{ todo.task }}</ion-select-option>

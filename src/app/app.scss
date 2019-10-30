@@ -107,6 +107,7 @@ ion-fab-buton {
 
 .dia-mes {
     color: #B8B7B7;
+    letter-spacing: 0.05em;
 }
 
 .logo-top {
@@ -233,4 +234,8 @@ ion-item {
 .opcoes .select-text,
 .opcoes .select-icon {
     display: transparent !important
+}
+
+.footer-md:before {
+    background-image: none !important;
 }
