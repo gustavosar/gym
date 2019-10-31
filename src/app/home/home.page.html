@@ -30,22 +30,10 @@
 <ion-content>
 
     <ul class="week-days">
-        <li (click)="navDay()">
+        <li (click)="navDay()" *ngFor="let day of days">
             <div class="items-date">
-                <div class="date-list">{{startWeek | date:'dd/MM'}}</div>
-                <div class="day-list">segunda</div>
-            </div>
-            <div class="items-divider"></div>
-            <div class="items-list">
-                <span>Ombro</span>
-                <span>Costas</span>
-            </div>
-        </li>
-
-        <li (click)="navDay()">
-            <div class="items-date">
-                <div class="date-list">{{startWeek.add('d', 1) | date:'dd/MM'}}</div>
-                <div class="day-list">quarta</div>
+                <div class="date-list">{{ startWeek.add('d', 1) | date:'dd/MM' }}</div>
+                <div class="day-list">{{day.wday}}</div>
             </div>
             <div class="items-divider"></div>
             <div class="items-list">

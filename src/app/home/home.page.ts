@@ -15,19 +15,29 @@ export class HomePage {
   public m = moment();
   public mm = moment();
   public mmm = moment();
-  public mmmm = moment();
 
   public startWeek;
   public endWeek;
   public weekNumber;
+  public weekday;
 
-  
+  public days  = [
+    {id: '1', wday: 'Monday', wdate: '' },
+    {id: '2', wday: 'Tuesday', wdate: '' },
+    {id: '3', wday: 'Wednesday', wdate: '' },
+    {id: '4', wday: 'Thursday', wdate: '' },
+    {id: '5', wday: 'Friday', wdate: '' },
+    {id: '6', wday: 'Saturday', wdate: '' },
+    {id: '7',wday: 'Sunday', wdate: '' }
+    ];
+
   /*
   public nextStartWeek;
   public nextEndWeek;
   public previousStartWeek;
   public previousEndWeek;
   */
+ 
 
 
   constructor(
@@ -38,6 +48,7 @@ export class HomePage {
     this.endWeek = this.m.endOf('isoWeek');
     this.startWeek = this.mm.startOf('isoWeek');
     this.weekNumber = this.mmm.weeks()-this.mmm.add(0, 'month').startOf('month').weeks() + 1;
+    this.weekday = moment().format('dddd');
 
     /*  
     this.nextStartWeek = this.moment.add(1, 'weeks').startOf('isoWeek');
@@ -48,6 +59,8 @@ export class HomePage {
     */
 
   }
+
+
 
   navDay() {
     const startWeek = JSON.stringify(this.startWeek);
