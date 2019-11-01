@@ -7,12 +7,14 @@ import { TaskII } from '../models/day.interface';
 import { ActivatedRoute } from '@angular/router';
 
 
+
 @Component({
   selector: 'app-day',
   templateUrl: './day.page.html',
   styleUrls: ['./day.page.scss'],
 })
 export class DayPage implements OnInit{
+  public navDay;
   public today = Date.now();
   todos: TaskI[];
 
@@ -29,7 +31,11 @@ export class DayPage implements OnInit{
     private firestoredayService: FirestoredayService,
     private loadingController: LoadingController,
     private route: ActivatedRoute,
-    ) { }
+    ) {
+
+
+
+     }
 
   ngOnInit(){
 
@@ -47,6 +53,8 @@ export class DayPage implements OnInit{
     if (this.dayId){
       this.loadDay();
     }
+
+    this.navDay = this.route.snapshot.queryParamMap.get("navDay")
 
   }
 
@@ -75,5 +83,12 @@ export class DayPage implements OnInit{
     });
   }
 
+  /* PEGA DATA DA URL VINDA DA HOME */
+/*   getDate(){
+    let navDay= this.activeRoute.snapshot.queryParams['navDay']
+    this.dataSelecionada = this.conversor.convertToJson(navDay)
+  } */
 
+
+  
 }

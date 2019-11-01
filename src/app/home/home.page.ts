@@ -22,15 +22,15 @@ export class HomePage {
   public weekday;
   public wdate;
 
-  public days  = [
-    {id: '1', wday: 'Monday', wdate: moment().startOf('isoWeek').format('DD/MM') },
-    {id: '2', wday: 'Tuesday', wdate: moment().startOf('isoWeek').add(1, 'days').format('DD/MM') },
-    {id: '3', wday: 'Wednesday', wdate: moment().startOf('isoWeek').add(2, 'days').format('DD/MM') },
-    {id: '4', wday: 'Thursday', wdate: moment().startOf('isoWeek').add(3, 'days').format('DD/MM') },
-    {id: '5', wday: 'Friday', wdate: moment().startOf('isoWeek').add(4, 'days').format('DD/MM') },
-    {id: '6', wday: 'Saturday', wdate: moment().startOf('isoWeek').add(5, 'days').format('DD/MM') },
-    {id: '7', wday: 'Sunday', wdate: moment().startOf('isoWeek').add(6, 'days').format('DD/MM') }
-    ];
+   public days  = [
+    {wday: 'Monday', wdate: moment().startOf('isoWeek').format('DD/MM'), date: moment().startOf('isoWeek').format('DD-MM-YY') },
+    {wday: 'Tuesday', wdate: moment().startOf('isoWeek').add(1, 'days').format('DD/MM'), date: moment().startOf('isoWeek').add(1, 'days').format('L') },
+    {wday: 'Wednesday', wdate: moment().startOf('isoWeek').add(2, 'days').format('DD/MM'), date: moment().startOf('isoWeek').add(2, 'days').format('DD-MM-YY') },
+    {wday: 'Thursday', wdate: moment().startOf('isoWeek').add(3, 'days').format('DD/MM'), date: moment().startOf('isoWeek').add(3, 'days').format('DD-MM-YY') },
+    {wday: 'Friday', wdate: moment().startOf('isoWeek').add(4, 'days').format('DD/MM'), date: moment().startOf('isoWeek').add(4, 'days').format('DD-MM-YY') },
+    {wday: 'Saturday', wdate: moment().startOf('isoWeek').add(5, 'days').format('DD/MM'), date: moment().startOf('isoWeek').add(5, 'days').format('DD-MM-YY') },
+    {wday: 'Sunday', wdate: moment().startOf('isoWeek').add(6, 'days').format('DD/MM'), date: moment().startOf('isoWeek').add(6, 'days').format('DD-MM-YY') }
+    ]; 
 
   /*
   public nextStartWeek;
@@ -38,8 +38,6 @@ export class HomePage {
   public previousStartWeek;
   public previousEndWeek;
   */
- 
-
 
   constructor(
     private activeRoute: ActivatedRoute,
@@ -61,13 +59,7 @@ export class HomePage {
 
   }
 
-
-
-/*   navDay() {
-    const wdate = JSON.stringify(this.wdate);
-    this.routes.navigate(['/day'], { queryParams:  { wdate } });
-  } */
-
+  /* PASSA POR URL DATA */
   navDay(navDay: string) {
     const navDay1 = JSON.stringify(this.navDay);
     this.routes.navigate(['/day'], { queryParams:  { navDay } });
