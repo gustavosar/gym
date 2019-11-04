@@ -8,7 +8,7 @@
             </span>
         </div>
         <div slot="end" class="data">
-            <div class="dia"><span class="data-text">{{today | date:'EEEE'}}</span> - <span class="data-numbers">{{today | date:'dd/MM'}} {{navDay}}</span></div>
+            <div class="dia"><span class="data-text">{{today | date:'EEEE'}}</span> - <span class="data-numbers">{{navDay |  date:'dd/MM'}}</span></div>
         </div>
     </ion-toolbar>
 
@@ -29,7 +29,7 @@
 
     </ion-list>
 
-    <input [(ngModel)]="day.day" name="10/10/10" [ngModelOptions]="{updateOn: change}" value="123">
+    <input [(ngModel)]="day.day" [ngModelOptions]="navDay" hidden="true">
 
     <ion-select class="opcoes" interface="alert" multiple="true" mode="ios" cancelText="Esquece" okText="Adicionar" [(ngModel)]="day.task" (ionChange)="saveDay()">
         <ion-select-option *ngFor="let todo of todos">{{ todo.task }}</ion-select-option>

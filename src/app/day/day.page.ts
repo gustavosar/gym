@@ -23,8 +23,9 @@ export class DayPage implements OnInit{
 
   day: TaskII = {
     task: '',
-    day: ''
+    day: this.route.snapshot.queryParamMap.get("navDay")
   };
+
 
   constructor(
     private firestoreService: FirestoreService,
@@ -32,7 +33,6 @@ export class DayPage implements OnInit{
     private loadingController: LoadingController,
     private route: ActivatedRoute,
     ) {
-
 
 
      }
@@ -54,6 +54,7 @@ export class DayPage implements OnInit{
       this.loadDay();
     }
 
+    /* RECUPERA DATA PASSADA NA HOME */
     this.navDay = this.route.snapshot.queryParamMap.get("navDay")
 
   }
@@ -88,7 +89,5 @@ export class DayPage implements OnInit{
     let navDay= this.activeRoute.snapshot.queryParams['navDay']
     this.dataSelecionada = this.conversor.convertToJson(navDay)
   } */
-
-
   
 }
