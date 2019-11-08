@@ -19,7 +19,7 @@
     <ion-list class="list" ion-padding ion-margin>
 
         <ion-item-sliding *ngFor="let day of days">
-            <ion-item>
+            <ion-item *ngIf="day.day == navDay">
                 <ion-label>{{day.task}}</ion-label>
             </ion-item>
             <ion-item-options side="end">

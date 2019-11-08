@@ -36,9 +36,10 @@
                 <div class="day-list">{{day.wday}}</div>
             </div>
             <div class="items-divider"></div>
-            <div class="items-list">
-                <span>Ombro</span>
-                <span>Costas</span>
+            <div class="items-list" *ngFor="let day of days">
+                <div *ngIf="day.day == navDay">
+                    <span>{{day.task}}</span>
+                </div>
             </div>
         </li>
     </ul>

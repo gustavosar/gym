@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import * as moment from 'moment';
 import { Router, ActivatedRoute } from '@angular/router';
+import { TaskII } from '../models/day.interface';
 
 @Component({
   selector: 'app-home',
