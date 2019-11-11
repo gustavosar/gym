@@ -6,13 +6,12 @@ import { TaskI } from '../models/task.interface';
 import { TaskII } from '../models/day.interface';
 import { ActivatedRoute } from '@angular/router';
 
-
-
 @Component({
   selector: 'app-day',
   templateUrl: './day.page.html',
   styleUrls: ['./day.page.scss'],
 })
+
 export class DayPage implements OnInit{
   public navDay;
   public today = Date.now();
@@ -32,10 +31,7 @@ export class DayPage implements OnInit{
     private firestoredayService: FirestoredayService,
     private loadingController: LoadingController,
     private route: ActivatedRoute,
-    ) {
-
-
-     }
+    ) { }
 
   ngOnInit(){
 
@@ -90,4 +86,9 @@ export class DayPage implements OnInit{
     this.dataSelecionada = this.conversor.convertToJson(navDay)
   } */
   
+    /* Deletando */
+    async onRemoveDay(idTodo:string) {
+      this.firestoredayService.removeDay(idTodo);
+    }
+
 }

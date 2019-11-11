@@ -10,6 +10,7 @@ import { NgxSmartModalService } from 'ngx-smart-modal';
   templateUrl: 'tarefas.page.html',
   styleUrls: ['tarefas.page.scss'],
 })
+
 export class TarefasPage implements AfterViewInit {
   public today = Date.now();
   todos: TaskI[];
