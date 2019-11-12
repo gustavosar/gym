@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TaskII } from '../models/day.interface';
+import { FirestoredayService } from '../services/firestoreday.service';
 
 @Component({
   selector: 'app-home',
@@ -9,9 +10,9 @@ import { TaskII } from '../models/day.interface';
   styleUrls: ['home.page.scss'],
 })
 
-export class HomePage {
-
+export class HomePage implements OnInit {
   public today = Date.now();
+  days: TaskII[];
 
   public m = moment();
   public mm = moment();
@@ -23,7 +24,7 @@ export class HomePage {
   public weekday;
   public wdate;
 
-   public days  = [
+   public internDays  = [
     {wday: 'Monday', wdate: moment().startOf('isoWeek').format('DD/MM'), date: moment().startOf('isoWeek').format('L') },
     {wday: 'Tuesday', wdate: moment().startOf('isoWeek').add(1, 'days').format('DD/MM'), date: moment().startOf('isoWeek').add(1, 'days').format('L') },
     {wday: 'Wednesday', wdate: moment().startOf('isoWeek').add(2, 'days').format('DD/MM'), date: moment().startOf('isoWeek').add(2, 'days').format('L') },
@@ -42,7 +43,8 @@ export class HomePage {
 
   constructor(
     private activeRoute: ActivatedRoute,
-		private routes: Router,
+    private routes: Router,
+    private firestoredayService: FirestoredayService,
   ) {
 
     this.endWeek = this.m.endOf('isoWeek');
@@ -57,6 +59,15 @@ export class HomePage {
     this.previousStartWeek = this.moment.subtract(1, 'weeks').startOf('isoWeek');
     this.previousEndWeek = this.moment.subtract(1, 'weeks').endOf('isoWeek') 
     */
+
+  }
+
+  ngOnInit(){
+    
+    /* SERVICO DAY */
+    this.firestoredayService.getDays().subscribe((days) =>{
+      this.days = days;
+    });
 
   }
 

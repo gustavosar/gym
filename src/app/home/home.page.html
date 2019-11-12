@@ -30,14 +30,14 @@
 <ion-content>
 
     <ul class="week-days">
-        <li (click)="navDay(day.date)" *ngFor="let day of days">
+        <li (click)="navDay(internDay.date)" *ngFor="let internDay of internDays">
             <div class="items-date">
-                <div class="date-list">{{day.wdate}}</div>
-                <div class="day-list">{{day.wday}}</div>
+                <div class="date-list">{{internDay.wdate}}</div>
+                <div class="day-list">{{internDay.wday}}</div>
             </div>
             <div class="items-divider"></div>
             <div class="items-list" *ngFor="let day of days">
-                <div *ngIf="day.day == navDay">
+                <div *ngIf="day.day == internDay.wdate">
                     <span>{{day.task}}</span>
                 </div>
             </div>
