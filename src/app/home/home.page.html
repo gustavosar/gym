@@ -36,10 +36,10 @@
                 <div class="day-list">{{internDay.wday}}</div>
             </div>
             <div class="items-divider"></div>
-            <div class="items-list" *ngFor="let day of days">
-                <div *ngIf="day.day == internDay.wdate">
-                    <span>{{day.task}}</span>
-                </div>
+            <div class="items-list">
+                <ul class="ul-list" *ngFor="let day of days">
+                    <li *ngIf="day.day == internDay.cdate">{{day.task}}</li>
+                </ul>
             </div>
         </li>
     </ul>
