@@ -24,7 +24,7 @@ export class HomePage implements OnInit {
   public weekday;
   public wdate;
 
-   public internDays  = [
+   public internDays = [
     {wday: 'Monday', wdate: moment().startOf('isoWeek').format('DD/MM'), date: moment().startOf('isoWeek').format('L'), cdate: moment().startOf('isoWeek').format('MM/DD/YYYY') },
     {wday: 'Tuesday', wdate: moment().startOf('isoWeek').add(1, 'days').format('DD/MM'), date: moment().startOf('isoWeek').add(1, 'days').format('L'), cdate: moment().startOf('isoWeek').add(1, 'days').format('MM/DD/YYYY') },
     {wday: 'Wednesday', wdate: moment().startOf('isoWeek').add(2, 'days').format('DD/MM'), date: moment().startOf('isoWeek').add(2, 'days').format('L'), cdate: moment().startOf('isoWeek').add(2, 'days').format('MM/DD/YYYY') },
