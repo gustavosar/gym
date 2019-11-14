@@ -7,7 +7,7 @@
         </div>
         <div class="btns-top">
             <a class="btn-calendario active" size="small">Calendário</a>
-            <a href="./tarefas" class="btn-tarefas" size="small">Tarefas</a>
+            <a (click)="navBtn()" class="btn-tarefas" size="small">Tarefas</a>
         </div>
         <div slot="end" class="data">
             <div class="dia-semana">{{today | date:'EEEE'}}</div>

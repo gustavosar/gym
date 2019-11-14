@@ -2,8 +2,8 @@ import { Component, AfterViewInit } from '@angular/core';
 import { AlertController, LoadingController, NavController } from '@ionic/angular';
 import { TaskI } from '../models/task.interface';
 import { FirestoreService } from '../services/firestore.service';
-import { ActivatedRoute } from '@angular/router';
 import { NgxSmartModalService } from 'ngx-smart-modal';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-tarefas',
@@ -24,9 +24,11 @@ export class TarefasPage implements AfterViewInit {
   constructor(
     public alertController: AlertController, 
     private firestoreService: FirestoreService,
+    private activeRoute: ActivatedRoute,
     private loadingController: LoadingController,
     private route: ActivatedRoute,
     private nav: NavController,
+    private routes: Router,
     public ngxSmartModalService: NgxSmartModalService
     ) { }
 
@@ -84,5 +86,10 @@ export class TarefasPage implements AfterViewInit {
   /* Deletando */
   async onRemoveTodo(idTodo:string) {
     this.firestoreService.removeTodo(idTodo);
+  }
+
+
+  navBtn () {
+    this.routes.navigate(['home'])
   }
 }

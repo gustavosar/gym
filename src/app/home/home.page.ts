@@ -77,5 +77,10 @@ export class HomePage implements OnInit {
     this.routes.navigate(['/day'], { queryParams:  { navDay } });
   }
 
+  navBtn () {
+    this.routes.navigate(['tarefas'])
+  }
+
+
 }
 
