@@ -59,3 +59,11 @@ small {
     color: #676767;
     padding-top: 4px;
 }
+
+.bglogin {
+    --background: url('../../assets/img/Login.png') no-repeat center center / cover;
+}
+
+.bgloginf {
+    --ion-background-color: #141313;
+}
