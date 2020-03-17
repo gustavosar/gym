@@ -22,7 +22,8 @@ export class DayPage implements OnInit{
 
   day: TaskII = {
     task: '',
-    day: this.route.snapshot.queryParamMap.get("navDay")
+    day: this.route.snapshot.queryParamMap.get("navDay"),
+    user: '',
   };
 
 
